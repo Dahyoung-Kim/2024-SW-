@@ -81,6 +81,7 @@ ps 명령어는 다양한 옵션을 통해 실행 중인 프로세스의 상세 
 
 ### ps 명령어 사용 예시
 ```
+$ ps
   PID TTY          TIME CMD
  1234 pts/0    00:00:00 bash
  2345 pts/0    00:00:00 ps
@@ -99,5 +100,25 @@ ps 명령어는 다양한 옵션을 통해 실행 중인 프로세스의 상세 
 + e: 모든 프로세스를 보여줍니다.
 
 ## 3. jobs 명령어
+### jobs 명령어란?
+jobs는 현재 셸 세션에서 실행 중인 백그라운드 작업을 보여줍니다. 이 명령어는 백그라운드 및 포그라운드 작업의 상태를 모니터링하고 관리하는 데 유용합니다.
+
+### jobs 명령어 사용 예시
+```
+$ jobs
+[1]   Running                 long_running_command &
+[2]-  Stopped (tty output)    another_command
+[3]+  Stopped (tty output)    yet_another_command
+```
+### ps 명령어 실행 시 영역별 설명
+
+
+
+
+
+
+
+
+
 
 ## 4. kill 명령어
