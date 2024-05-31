@@ -110,17 +110,66 @@ $ jobs
 [2]-  Stopped (tty output)    another_command
 [3]+  Stopped (tty output)    yet_another_command
 ```
-### ps 명령어 실행 시 영역별 설명
-
+### jobs 명령어 실행 시 영역별 설명
+![image](https://github.com/Dahyoung-Kim/2024-SW-/assets/171330254/f5efef13-2f1a-421c-a10e-adf336570d34)
 + [N]: 작업 번호 (job number). 이 번호는 셸 세션 내에서 해당 작업을 참조하는 데 사용됩니다.
-+ 
++ Running: 작업이 백그라운드에서 실행 중입니다.
++ Stopped: 작업이 일시 중지되었습니다.
++ Done: 작업이 완료되었습니다.
++ Exited: 작업이 종료되었습니다.
 
-
-
-
-
-
-
-
+### jobs 명령어 옵션
++ -l : 프로세스 ID와 함께 잡 목록을 출력합니다.
++ -n : 마지막로 알림 이후 변경된 잡만 출력합니다.
++ -p : 잡의 프로세스 ID만 출력합니다.
++ -r : 실행 중인 잡만 출력합니다.
++ -s : 중지된 잡만 출력합니다.
 
 ## 4. kill 명령어
+### kill 명령어란?
+kill은 프로세스에 신호를 보내는 데 사용됩니다.
+이 신호는 프로세스를 종료하거나, 중지하거나, 다시 시작하는 등 다양한 작업을 수행할 수 있습니다. 
+kill 명령어는 프로세스를 제어하고 관리하는 데 중요한 도구입니다.
+
+### kill 명령어 사용 예시
+```
+$ kill -l
+ 1) SIGHUP     2) SIGINT     3) SIGQUIT    4) SIGILL     5) SIGTRAP
+ 6) SIGABRT    7) SIGBUS     8) SIGFPE     9) SIGKILL    10) SIGUSR1
+11) SIGSEGV   12) SIGUSR2   13) SIGPIPE   14) SIGALRM   15) SIGTERM
+16) SIGSTKFLT 17) SIGCHLD   18) SIGCONT   19) SIGSTOP   20) SIGTSTP
+21) SIGTTIN   22) SIGTTOU   23) SIGURG    24) SIGXCPU   25) SIGXFSZ
+26) SIGVTALRM 27) SIGPROF   28) SIGWINCH  29) SIGPWR    30) SIGSYS
+```
+
+### kill 명령어 옵션
++ -l : 모든 신호 이름을 출력하거나, 주어진 신호 번호 또는 이름에 해당하는 신호 번호를 출력합니다.
++ -s <signal> : 특정 신호를 보냅니다. 신호 이름 또는 번호로 지정할 수 있습니다.
++ -SIG<signal> : 신호 이름 앞에 SIG를 붙여 신호를 보냅니다.
++ --help : kill 명령어의 사용법을 출력합니다.
++ -v : 신호를 성공적으로 보낸 후에 메시지를 출력합니다.
++ -V : kill 명령어의 버전을 출력합니다.
+
+### kill 명령어의 주요 시그널
++ SIGHUP
+  + HUP : hangup, 로그아웃등의 접속이 끊을 때 발생하는 신호(Signal)로 특정 실행 중인 프로그램이 사용하는 설정 파일을 변경시키고 변화된 내용을 적용할때 사용됩니다.
++ SIGINT
+  + INT : 현재 작동중인 프로그램의 동작을 멈출때 사용되며, 일반적인 값은 <CTRL>+<c> 입니다.
++ SIGKILL
+  + KILL : 	프로그램을 무조건 종료할 경우 사용됩니다.
++ SIGSEGV
+  + SEGV : 잘못된 메모리 관리시 생기는 신호(Signal) 입니다.
++ SIGTERM
+  + TERM : 실행중인 프로그램을 정상적인 종료방법으로 프로그램을 종료하는 신호(Signal)로 kill 명령에서 신호(Signal)를 지정하지 않으면 이 신호(Signal)를 사용하여 프로그램을 종료합니다.
++ SIGCONT
+  + CONT : 중지 되어 있는 프로그램을 재실행 하는데 사용되는 신호(Signal) 입니다.
++ SIGSTOP
+  + STOP : 프로그램을 중지 하는데 사용되는 신호(Signal) 입니다.
++ SIGTSTP
+  + TSTP : 	터미널에서 중지되어 있는 신호(Signal) 입니다.
+
+
+
+
+
+
